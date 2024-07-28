@@ -1,0 +1,30 @@
+/* NavDrawer.css */
+.ant-drawer-content-wrapper {
+    background: linear-gradient(135deg, #0b1f3c, #1a3c6a) !important; /* Adjusted gradient colors */
+    backdrop-filter: blur(10px) !important; /* Blur effect */
+    -webkit-backdrop-filter: blur(10px) !important; /* For Safari */
+    box-shadow: none !important;
+  }
+  
+  .ant-drawer-header {
+    background: linear-gradient(135deg, #0b1f3c, #1a3c6a) !important; /* Adjusted gradient colors */
+    border-bottom: none !important;
+    backdrop-filter: blur(10px) !important; /* Blur effect */
+    -webkit-backdrop-filter: blur(10px) !important; /* For Safari */
+  }
+  
+  .ant-drawer-title {
+    color: white !important;
+  }
+  
+  .ant-drawer-body {
+    background: linear-gradient(135deg, #0b1f3c, #1a3c6a) !important; /* Adjusted gradient colors */
+    color: white !important;
+    backdrop-filter: blur(10px) !important; /* Blur effect */
+    -webkit-backdrop-filter: blur(10px) !important; /* For Safari */
+  }
+  
+  .ant-drawer-close {
+    color: white !important;
+  }
+  

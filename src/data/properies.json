@@ -1,0 +1,349 @@
+[
+  {
+    "id": 1,
+    "property_name": "Ansh Residence",
+    "address1": "Murad Nagar",
+    "avl_for": "Male",
+    "dist_from_college": 500,
+    "room_detail": [{ "washroom": "Yes", "seater": 2 }],
+    "starting_price": 10000,
+    "property_type": "Shared Flat"
+
+  },
+  {
+    "id": 2,
+    "property_name": "Aarav PG",
+    "address1": "Murad Nagar",
+    "avl_for": "Female",
+    "dist_from_college": 1000,
+    "room_detail": [{ "washroom": "Yes", "seater": 3 }],
+    "starting_price": 15000
+  },
+  {
+    "id": 11,
+    "property_name": "Yadav PG",
+    "avl_for": "Female",
+    "address1": "Murad Nagar",
+    "near_college": "KIET Group of Institutions , Ghaziabad",
+    "mess_facility": "Available",
+    "rnt_pay_duration": "Quarterly",
+    "property_type": "Independent Flat",
+    "starting_price": 6000.0,
+    "dist_from_college": 1500.0,
+    "room_detail": [
+      {
+        "id": 1,
+        "seater": "1",
+        "furnished": "Unfurnished",
+        "kitchen": "Available (Self)",
+        "washroom": "Attached"
+      },
+      {
+        "id": 2,
+        "seater": "2",
+        "furnished": "Semi-furnished",
+        "kitchen": "Available(Common)",
+        "washroom": "Attached"
+      },
+      {
+        "id": 3,
+        "seater": "3",
+        "furnished": "Fully-furnished",
+        "kitchen": "Available(Common)",
+        "washroom": "Common"
+      }
+    ],
+    "ppty_amenity": [
+      {
+        "id": 5,
+        "amenity_name": "RO"
+      },
+      {
+        "id": 6,
+        "amenity_name": "Cooler"
+      }
+    ],
+    "cover_image": null
+  },
+  {
+    "id": 3,
+    "property_name": "Raj's Place",
+    "address1": "Address 3",
+    "avl_for": "Both",
+    "dist_from_college": 700,
+    "room_detail": [{ "washroom": "Yes", "seater": 1 }],
+    "starting_price": 8000,
+    "rnt_pay_duration": "Monthly",
+    "ppty_amenity": [
+      {
+        "id": 4,
+        "amenity_name": "AC"
+      },
+      {
+        "id": 6,
+        "amenity_name": "Cooler"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "property_name": "Nihal's Nest",
+    "address1": "Address 4",
+    "avl_for": "Male",
+    "dist_from_college": 1200,
+    "room_detail": [{ "washroom": "No", "seater": 2 }],
+    "starting_price": 5000
+  },
+  {
+    "id": 5,
+    "property_name": "Sunshine PG",
+    "address1": "Address 5",
+    "avl_for": "Female",
+    "dist_from_college": 300,
+    "room_detail": [{ "washroom": "Yes", "seater": 1 }],
+    "starting_price": 9500
+  },
+  {
+    "id": 6,
+    "property_name": "Comfort Homes",
+    "address1": "Address 6",
+    "avl_for": "Both",
+    "dist_from_college": 2000,
+    "room_detail": [{ "washroom": "No", "seater": 3 }],
+    "starting_price": 7000
+  },
+  {
+    "id": 7,
+    "property_name": "Arjun's Abode",
+    "address1": "Address 7",
+    "avl_for": "Male",
+    "dist_from_college": 900,
+    "room_detail": [{ "washroom": "Yes", "seater": 2 }],
+    "starting_price": 11000
+  },
+  {
+    "id": 8,
+    "property_name": "Aisha Haven",
+    "address1": "Address 8",
+    "avl_for": "Female",
+    "dist_from_college": 1800,
+    "room_detail": [{ "washroom": "No", "seater": 3 }],
+    "starting_price": 6000
+  },
+  {
+    "id": 9,
+    "property_name": "Blissful Stay",
+    "address1": "Address 9",
+    "avl_for": "Both",
+    "dist_from_college": 400,
+    "room_detail": [{ "washroom": "Yes", "seater": 1 }],
+    "starting_price": 12000
+  },
+  {
+    "id": 10,
+    "property_name": "Happy Home",
+    "address1": "Address 10",
+    "avl_for": "Male",
+    "dist_from_college": 1300,
+    "room_detail": [{ "washroom": "No", "seater": 2 }],
+    "starting_price": 6500
+  },
+  {
+    "id": 12,
+    "property_name": "Sharma PG",
+    "address1": "Address 12",
+    "avl_for": "Female",
+    "dist_from_college": 1100,
+    "room_detail": [{ "washroom": "Yes", "seater": 3 }],
+    "starting_price": 10000
+  },
+  {
+    "id": 13,
+    "property_name": "Green View",
+    "address1": "Address 13",
+    "avl_for": "Both",
+    "dist_from_college": 2500,
+    "room_detail": [{ "washroom": "No", "seater": 1 }],
+    "starting_price": 8500
+  },
+  {
+    "id": 14,
+    "property_name": "Blue Sky PG",
+    "address1": "Address 14",
+    "avl_for": "Male",
+    "dist_from_college": 600,
+    "room_detail": [{ "washroom": "Yes", "seater": 2 }],
+    "starting_price": 7500
+  },
+  {
+    "id": 15,
+    "property_name": "Ocean Breeze",
+    "address1": "Address 15",
+    "avl_for": "Female",
+    "dist_from_college": 500,
+    "room_detail": [{ "washroom": "No", "seater": 3 }],
+    "starting_price": 9000
+  },
+  {
+    "id": 16,
+    "property_name": "Golden Stay",
+    "address1": "Address 16",
+    "avl_for": "Both",
+    "dist_from_college": 1400,
+    "room_detail": [{ "washroom": "Yes", "seater": 1 }],
+    "starting_price": 7000
+  },
+  {
+    "id": 17,
+    "property_name": "Cityscape PG",
+    "address1": "Address 17",
+    "avl_for": "Male",
+    "dist_from_college": 2200,
+    "room_detail": [{ "washroom": "No", "seater": 2 }],
+    "starting_price": 8000
+  },
+  {
+    "id": 18,
+    "property_name": "Urban Nest",
+    "address1": "Address 18",
+    "avl_for": "Female",
+    "dist_from_college": 1600,
+    "room_detail": [{ "washroom": "Yes", "seater": 3 }],
+    "starting_price": 9500
+  },
+  {
+    "id": 19,
+    "property_name": "Peaceful Retreat",
+    "address1": "Address 19",
+    "avl_for": "Both",
+    "dist_from_college": 300,
+    "room_detail": [{ "washroom": "No", "seater": 1 }],
+    "starting_price": 6000
+  },
+  {
+    "id": 20,
+    "property_name": "Cozy Corner",
+    "address1": "Address 20",
+    "avl_for": "Male",
+    "dist_from_college": 1000,
+    "room_detail": [{ "washroom": "Yes", "seater": 2 }],
+    "starting_price": 5000
+  },
+  {
+    "id": 21,
+    "property_name": "Sunrise PG",
+    "address1": "Address 21",
+    "avl_for": "Female",
+    "dist_from_college": 1200,
+    "room_detail": [{ "washroom": "No", "seater": 3 }],
+    "starting_price": 10000
+  },
+  {
+    "id": 22,
+    "property_name": "Tranquil Stay",
+    "address1": "Address 22",
+    "avl_for": "Both",
+    "dist_from_college": 1500,
+    "room_detail": [{ "washroom": "Yes", "seater": 1 }],
+    "starting_price": 11000
+  },
+  {
+    "id": 23,
+    "property_name": "Serene PG",
+    "address1": "Address 23",
+    "avl_for": "Male",
+    "dist_from_college": 200,
+    "room_detail": [{ "washroom": "No", "seater": 2 }],
+    "starting_price": 9500
+  },
+  {
+    "id": 24,
+    "property_name": "Calm Place",
+    "address1": "Address 24",
+    "avl_for": "Female",
+    "dist_from_college": 1800,
+    "room_detail": [{ "washroom": "Yes", "seater": 3 }],
+    "starting_price": 9000
+  },
+  {
+    "id": 25,
+    "property_name": "Blissful Abode",
+    "address1": "Address 25",
+    "avl_for": "Both",
+    "dist_from_college": 1300,
+    "room_detail": [{ "washroom": "No", "seater": 1 }],
+    "starting_price": 12000
+  },
+  {
+    "id": 26,
+    "property_name": "Sunny Side",
+    "address1": "Address 26",
+    "avl_for": "Male",
+    "dist_from_college": 700,
+    "room_detail": [{ "washroom": "Yes", "seater": 2 }],
+    "starting_price": 10000
+  },
+  {
+    "id": 27,
+    "property_name": "Rainy Retreat",
+    "address1": "Address 27",
+    "avl_for": "Female",
+    "dist_from_college": 1500,
+    "room_detail": [{ "washroom": "No", "seater": 3 }],
+    "starting_price": 8500
+  },
+  {
+    "id": 28,
+    "property_name": "Cloud Nine PG",
+    "address1": "Address 28",
+    "avl_for": "Both",
+    "dist_from_college": 400,
+    "room_detail": [{ "washroom": "Yes", "seater": 1 }],
+    "starting_price": 9500
+  },
+  {
+    "id": 29,
+    "property_name": "Hilltop Stay",
+    "address1": "Address 29",
+    "avl_for": "Male",
+    "dist_from_college": 900,
+    "room_detail": [{ "washroom": "No", "seater": 2 }],
+    "starting_price": 7000
+  },
+  {
+    "id": 30,
+    "property_name": "Valley View",
+    "address1": "Address 30",
+    "avl_for": "Female",
+    "dist_from_college": 1100,
+    "room_detail": [{ "washroom": "Yes", "seater": 3 }],
+    "starting_price": 8000
+  },
+  {
+    "id": 31,
+    "property_name": "Forest Lodge",
+    "address1": "Address 31",
+    "avl_for": "Both",
+    "dist_from_college": 2500,
+    "room_detail": [{ "washroom": "No", "seater": 1 }],
+    "starting_price": 6000
+  },
+  {
+    "id": 32,
+    "property_name": "Riverside PG",
+    "address1": "Address 32",
+    "avl_for": "Male",
+    "dist_from_college": 600,
+    "room_detail": [{ "washroom": "Yes", "seater": 2 }],
+    "starting_price": 8500
+  },
+  {
+    "id": 33,
+    "property_name": "Lakefront PG",
+    "address1": "Address 33",
+    "avl_for": "Female",
+    "dist_from_college": 500,
+    "room_detail": [{ "washroom": "No", "seater": 3 }],
+    "starting_price": 12000
+  }
+]
