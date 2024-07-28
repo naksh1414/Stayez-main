@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import Card from "../../Components/Cards/Card";
 import MapImg from "../../assets/Map.png";
-import data from "../../data/properies.json";
+// import data from "../../data/properies.json";
+import Swal from "sweetalert2";
 import { MdArrowDropDown } from "react-icons/md";
 import { FaRupeeSign } from "react-icons/fa";
 import { RiPinDistanceFill } from "react-icons/ri";
@@ -16,6 +17,10 @@ import Pagination from "../../Components/Pagination/Pagination";
 import MoreFiltersModal from "../../Components/Modal/MoreFiltersModal";
 import { IoFilterSharp } from "react-icons/io5";
 import AllFiltersModal from "../../Components/Modal/AllFiltersModal";
+import axiosInstance from "../../API/axiosConfig";
+
+const API_URL = "https://10.21.81.18:8000";
+
 const Flats = () => {
   const [modalState, setModalState] = useState(null);
   const [selectedPriceRange, setSelectedPriceRange] = useState([
@@ -32,6 +37,24 @@ const Flats = () => {
   const [selectedNearCollege, setSelectedNearCollege] = useState([]);
   const [selectedPayDuration, setSelectedPayDuration] = useState([]);
   const [selectedMessFacility, setSelectedMessFacility] = useState([]);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    // Fetch data from server
+    fetch(`${API_URL}/properties/property/list/`) // replace with your API endpoint
+      .then((response) => response.json())
+      .then((data) => {
+        setData(data);
+        console.log(data);
+        // setFilteredData(data); // Initially show all data
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+
+  useEffect(() => {
+    const savedWishlist = JSON.parse(localStorage.getItem("Wishlist")) || [];
+    setWishlist(savedWishlist);
+  }, []);
 
   const handleApplyMoreFilters = (filters) => {
     setSelectedPropertyType(filters.propertyType);
@@ -95,13 +118,38 @@ const Flats = () => {
   const handleAddToWishlist = (property) => {
     console.log("Adding to wishlist:", property);
     if (wishlist.some((item) => item.id === property.id)) {
-      alert("This property is already in your wishlist.");
+      // alert("This property is already in your wishlist.");
+      Swal.fire({
+        title: "Wishlist!!",
+        text: "Already in your wishlist",
+        icon: "error",
+      });
       return;
     }
     const newWishlist = [...wishlist, property];
     setWishlist(newWishlist);
     localStorage.setItem("Wishlist", JSON.stringify(newWishlist));
-    alert("Added to Wishlist!");
+
+    axiosInstance
+      .post("/features/cart/add/", { id: property.id })
+      .then((response) => {
+        console.log(response);
+        // alert("Added to Wishlist!");
+        Swal.fire({
+          title: "Wishlist Added",
+          text: response.data.msg,
+          icon: "success",
+        });
+        console.log("Server response:", response.data);
+      })
+      .catch((error) => {
+        console.error("Error adding to wishlist:", error);
+        Swal.fire({
+          title: "Error in adding the property",
+          text: error.message,
+          icon: "error",
+        });
+      });
   };
 
   const filteredData = data.filter((property) => {
@@ -321,11 +369,12 @@ const Flats = () => {
         onRemoveFilter={handleRemoveFilter}
       />
       <div className="flex flex-row justify-center mt-[10px] md:mt-5">
-        <div className="p-5 justify-center items-center flex flex-col">
+        <div className="p-8 pl-20 justify-center items-center flex flex-col">
           <div>
             {currentProperties.map((property, index) => (
               <Card
-                key={index}
+                key={property.id}
+                imgSrc={MapImg}
                 property={property}
                 onAddToWishlist={() => handleAddToWishlist(property)}
               />
@@ -346,5 +395,4 @@ const Flats = () => {
     </main>
   );
 };
-
 export default Flats;

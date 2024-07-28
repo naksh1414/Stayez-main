@@ -1,6 +1,8 @@
 import axios from "axios";
 import { createContext, useState, useEffect, useCallback } from "react";
-import { toast } from "react-toastify";
+import Swal from "sweetalert2";
+import axiosInstance from "../API/axiosConfig";
+// import { useNavigate } from "react-router-dom";
 
 const AuthContext = createContext();
 
@@ -8,46 +10,74 @@ export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const checkAuthStatus = useCallback(() => {
-    const token = localStorage.getItem("Refresh Token");
+    const token = localStorage.getItem("token");
     setIsLoggedIn(!!token);
   }, []);
 
+  // const navigate = useNavigate(); // Ensure this is within a Router context
+
   useEffect(() => {
     checkAuthStatus();
-    const interval = setInterval(checkAuthStatus, 10000);
-    return () => clearInterval(interval);
   }, [checkAuthStatus]);
 
   const login = () => {
     setIsLoggedIn(true);
+    localStorage.setItem("token", "your-token-here"); // Update with actual token logic
   };
 
   const logout = async () => {
-    const Refresh = localStorage.getItem("Refresh Token");
-    const res = await axios.post(
-      "https://2e5a-125-21-249-98.ngrok-free.app/main/logout/",
-      { refresh: Refresh },
-      {
-        withCredentials: true,
+    const result = await Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, Logout!",
+    });
+
+    if (result.isConfirmed) {
+      try {
+        const token = localStorage.getItem("token");
+        const refreshToken = localStorage.getItem("refresh");
+
+        if (!token || !refreshToken) {
+          throw new Error("No token found");
+        }
+
+        const response = await axiosInstance.post("/main/logout/", {
+          refresh: refreshToken,
+        });
+
+        if (response.status === 200) {
+          localStorage.removeItem("token");
+          localStorage.removeItem("refresh");
+          setIsLoggedIn(false);
+          // navigate("/");
+          Swal.fire({
+            title: "Logged out!",
+            text: "You have been logged out successfully.",
+            icon: "success",
+          });
+        } else {
+          Swal.fire({
+            title: "Logout failed",
+            text: "An error occurred during logout. Please try again.",
+            icon: "error",
+          });
+        }
+      } catch (error) {
+        Swal.fire({
+          title: "Error",
+          text: "An error occurred during logout. Please try again.",
+          icon: "error",
+        });
       }
-    );
-    if (res.status === 200) {
-      localStorage.removeItem("Refresh Token");
-      setIsLoggedIn(false);
-      toast.error("Successfully Logged out", {
-        position: "top-center",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        theme: "colored",
-      });
     }
   };
 
   return (
-    <AuthContext.Provider
-      value={{ isLoggedIn, login, logout, checkAuthStatus }}
-    >
+    <AuthContext.Provider value={{ isLoggedIn, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

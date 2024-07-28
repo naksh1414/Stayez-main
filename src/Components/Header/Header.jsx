@@ -2,6 +2,7 @@ import { FaHeart } from "react-icons/fa";
 import LOgo from "../../assets/logo.png";
 import Button from "../Buttons/Button";
 import { Button2 } from "../Buttons/Button";
+
 // import { RiArrowDropDownLine } from "react-icons/ri";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { NavLink } from "react-router-dom";

@@ -4,10 +4,11 @@ import or from "../../assets/or.png";
 import { FcGoogle } from "react-icons/fc";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import Swal from "sweetalert2";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import AuthContext from "../../context/AuthContext";
 import { toast } from "react-toastify";
+import axiosInstance from "../../API/axiosConfig";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -16,17 +17,19 @@ const Login = () => {
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const { login } = useContext(AuthContext);
+
   const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(String(email).toLowerCase());
   };
   const handleLogin = async () => {
     try {
-      const res = await axios.post(
-        "https://2e5a-125-21-249-98.ngrok-free.app/main/api/token/",
-        { username: email, password: password },
-        { withCredentials: true }
+      const res = await axiosInstance.post(
+        "/main/api/token/",
+        { username: email, password: password }
+        // { withCredentials: true }
       );
+      console.log("Server response:", res.data);
 
       if (res.status === 200) {
         toast.success("Successfully Logged In", {
@@ -36,7 +39,19 @@ const Login = () => {
           closeOnClick: true,
           theme: "colored",
         });
-        localStorage.setItem("Refresh Token", res.data.refresh);
+
+        const { access, refresh } = res.data;
+        console.log("access", access);
+        console.log("refresh", refresh);
+
+        // Verify setting tokens in local storage
+        localStorage.setItem("token", access);
+        localStorage.setItem("refresh", refresh);
+
+        // Print tokens to verify
+        console.log("Stored access token:", localStorage.getItem("token"));
+        console.log("Stored refresh token:", localStorage.getItem("refresh"));
+
         login();
         navigate("/");
       }

@@ -2,35 +2,49 @@ import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import WishImg from "../../assets/wishlist.png";
 import Card from "../../Components/Cards/WishLIstCard";
+import axiosInstance from "../../API/axiosConfig";
 
 const Wish = () => {
   const [wishlist, setWishlist] = useState([]);
 
   useEffect(() => {
-    // Load wishlist items from local storage
-    const savedWishlist = JSON.parse(localStorage.getItem("Wishlist")) || [];
-    setWishlist(savedWishlist);
+    // Fetch wishlist items from the server
+    const fetchWishlist = async () => {
+      try {
+        const response = await axiosInstance.get("/features/cart/"); // Replace with your API endpoint
+        setWishlist(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.error("Error fetching wishlist data:", error);
+      }
+    };
+
+    fetchWishlist();
   }, []);
 
-  const handleRemoveFromWishlist = (property) => {
+  const handleRemoveFromWishlist = async (property) => {
     // Check if property id is correctly identified
     console.log("Removing property:", property);
 
-    // Find the index of the property to remove
-    const index = wishlist.findIndex((item) => item.id === property.id);
+    try {
+      await axiosInstance.delete(`/features/cart/remove/${property.id}/`); // Replace with your API endpoint
 
-    if (index !== -1) {
-      // Create a copy of the wishlist array
-      const newWishlist = [...wishlist];
+      const index = wishlist.findIndex((item) => item.id === property.id);
 
-      // Remove the item from the copy
-      newWishlist.splice(index, 1);
+      if (index !== -1) {
+        const newWishlist = [...wishlist];
 
-      // Update state and local storage
-      setWishlist(newWishlist);
-      localStorage.setItem("Wishlist", JSON.stringify(newWishlist));
-    } else {
-      console.log("Property not found in wishlist:", property);
+        newWishlist.splice(index, 1);
+
+        setWishlist(newWishlist);
+        localStorage.setItem("Wishlist", JSON.stringify(newWishlist));
+
+        window.location.reload();
+      } else {
+        console.log("Property not found in wishlist:", property);
+      }
+    } catch (error) {
+      console.error("Error removing property from wishlist:", error);
     }
   };
 
@@ -52,7 +66,7 @@ const Wish = () => {
           </h1>
         </div>
       ) : (
-        <div className="flex flex-col md:flex-row justify-center w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {wishlist.map((property) => (
             <Card
               key={property.id}

@@ -3,7 +3,8 @@ import LoginImg from "../../assets/LOgin.png";
 import or from "../../assets/or.png";
 import { FcGoogle } from "react-icons/fc";
 import { NavLink, useNavigate } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
+import axiosInstance from "../../API/axiosConfig";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -12,10 +13,10 @@ const Register = () => {
   const [fname, setFName] = useState("");
   const [lname, setLName] = useState("");
   const [phone, setPhone] = useState("");
-  axios.defaults.withCredentials = true;
+  // axios.defaults.withCredentials = true;
 
   const handleRegister = async () => {
-    const res = await axios.post("", {
+    const res = await axiosInstance.post("/main/user-register/", {
       first_name: fname,
       last_name: lname,
       email: email,
@@ -34,11 +35,7 @@ const Register = () => {
     <main>
       <div className="w-full flex">
         <div className="hidden md:flex md:w-[50%]">
-          <img
-            className="object-cover w-full h-full"
-            src={LoginImg}
-            alt=""
-          />
+          <img className="object-cover w-full h-full" src={LoginImg} alt="" />
         </div>
         <div className="flex w-full md:w-[50%] items-center flex-col">
           <h1 className="text-[#03A9F4] font-semibold text-[1.8rem] md:text-[3rem] mt-10">

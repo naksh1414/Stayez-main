@@ -18,14 +18,16 @@ const Card = ({ property, onAddToWishlist }) => {
     cover_image,
   } = property;
 
+  console.log(room_detail);
+
   const imgSrc = cover_image || CardImg;
 
   return (
     <main className="">
-      <div className="w-full md:w-[800px] md:h-[300px] flex flex-col md:flex-row border-2 border-[#03A9F4] my-10 rounded-2xl">
-        <div className="md:w-[35%] h-full">
+      <div className="w-full md:w-[900px] md:h-[350px] flex flex-col md:flex-row border-2 border-[#03A9F4] my-10 rounded-2xl">
+        <div className="md:w-[40%] h-full">
           <img
-            className="h-[200px] md:h-full w-full"
+            className="h-full w-full object-cover rounded-l-2xl"
             src={imgSrc}
             alt="property_img"
           />
@@ -35,16 +37,16 @@ const Card = ({ property, onAddToWishlist }) => {
             <h1 className="text-[1rem] md:text-[1.8rem]">{property_name}</h1>
             <div
               className={`flex flex-row ${
-                avl_for === "Male"
+                avl_for === "Boys"
                   ? "bg-[#03A9F4]" // Blue for Male
-                  : avl_for === "Female"
+                  : avl_for === "Girls"
                   ? "bg-[#F48FB1]" // Pink for Female
                   : "bg-transparent" // Transparent for Both
               } border-[1px] border-white rounded-xl w-[120px] h-8 items-center px-4`}
             >
-              {avl_for === "Male" ? (
+              {avl_for === "Boys" ? (
                 <FaMale />
-              ) : avl_for === "Female" ? (
+              ) : avl_for === "" ? (
                 <FaFemale />
               ) : (
                 <FaGenderless />
@@ -53,7 +55,9 @@ const Card = ({ property, onAddToWishlist }) => {
             </div>
           </div>
 
-          <h1 className="text-[1rem] text-[#78878F] md:text-[1.2rem]">{address1}</h1>
+          <h1 className="text-[1rem] text-[#78878F] md:text-[1.2rem]">
+            {address1}
+          </h1>
           <div className="rounded-xl w-[220px] h-8 mt-2 items-center flex">
             <FaLocationDot className="text-[#03A9F4]" />
             <h1 className="text-[#03A9F4] ml-2">
@@ -63,11 +67,11 @@ const Card = ({ property, onAddToWishlist }) => {
           <div className="flex flex-col">
             <div className="rounded-xl w-[120px] h-8 mt-2 items-center flex">
               <FaBath className="text-white mr-2" />
-              <h1 className="text-white">{room_detail[0].washroom}</h1>
+              <h1 className="text-white">{room_detail.washroom}Washroom</h1>
             </div>
             <div className="rounded-xl w-[120px] h-8 mt-2 items-center flex">
               <FaBed className="text-white mr-2 " />
-              <h1 className="text-white">{room_detail[0].seater}Seater</h1>
+              <h1 className="text-white">{room_detail.seater}Seater</h1>
             </div>
           </div>
           <div className="flex justify-between items-center mt-5">
@@ -78,7 +82,7 @@ const Card = ({ property, onAddToWishlist }) => {
               </h1>
             </div>
             <div>
-              <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-5">
+              <div className="flex flex-col md:flex-row space-y-2 mt- md:space-y-0 md:space-x-5">
                 <button
                   onClick={onAddToWishlist}
                   className="bg-white text-[#03A9F4] py-2 px-3 rounded-md border-2 border-[#03A9F4] hover:border-white hover:bg-[#03A9F4] hover:text-white"

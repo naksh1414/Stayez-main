@@ -66,7 +66,13 @@ const MapComponent = ({ properties }) => {
     }
   }, [properties, mapInstance]);
 
-  return <div id="map" style={{ height: "800px", width: "80%" }}></div>;
+  return (
+    <div
+      id="map"
+      className="pl-28"
+      style={{ height: "800px", width: "60%" }}
+    ></div>
+  );
 };
 
 export default MapComponent;

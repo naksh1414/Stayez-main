@@ -1,6 +1,6 @@
 import ThumbGallery from "../../Components/Carousel/ThumbGallery";
 import { PiWhatsappLogoLight } from "react-icons/pi";
-import BasicSwitches from "../../Components/Switch/switch";
+// import BasicSwitches from "../../Components/Switch/switch";
 import Button from "../../Components/Buttons/Button";
 import { useState } from "react";
 import { MdCall } from "react-icons/md";
@@ -71,7 +71,9 @@ const SpecificFlat = () => {
     <main>
       <div className="flex flex-col md:flex-row">
         <div className=" md:w-[50%] md:border-r-2 m-10 text-white ">
-          <h1 className="font-semibold text-[1.5rem] md:text-[2rem]">Boy&apos;s Pg</h1>
+          <h1 className="font-semibold text-[1.5rem] md:text-[2rem]">
+            Boy&apos;s Pg
+          </h1>
           <p className=" font-normal  text-[0.8rem] md:text-[1.3rem]">
             {" "}
             At StayEz, we understand the unique needs of students !
@@ -87,7 +89,9 @@ const SpecificFlat = () => {
             <h1 className="text-white text-[1.2rem] md:text-[1.5rem] font-semibold">
               Starts From{" "}
             </h1>
-            <h1 className="text-[#03A9F4] text-[1.5rem] md:text-[2rem]">Rs 1200.00/mo</h1>
+            <h1 className="text-[#03A9F4] text-[1.5rem] md:text-[2rem]">
+              Rs 1200.00/mo
+            </h1>
           </div>
           <div className="mt-10 flex flex-col justify-around text-[1.2rem]  text-black mr-6">
             <div className="flex flex-col md:flex-row justify-around mt-5 rounded-md p-5 space-y-2">

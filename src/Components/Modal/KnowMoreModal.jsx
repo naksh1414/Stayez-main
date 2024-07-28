@@ -8,8 +8,8 @@ const KnowMoreModal = ({ isOpen, onRequestClose }) => {
   const navigate = useNavigate();
 
   const handleLinkClick = (path) => {
-    onRequestClose();  // Close the modal
-    navigate(path);    // Navigate to the new path
+    onRequestClose(); // Close the modal
+    navigate(path); // Navigate to the new path
   };
 
   return (
@@ -20,11 +20,21 @@ const KnowMoreModal = ({ isOpen, onRequestClose }) => {
       className="modal-content"
       overlayClassName="modal-overlay"
     >
-      <div className="h-[180px] w-[300px] flex justify-between text-[1.5rem] bg-white text-[#2590ce] px-4 py-6 rounded absolute top-[120px] right-[150px] z-20">
+      <div className="h-[150px] w-[300px] flex justify-between text-[1.3rem] bg-[#2590ce] text-white px-4 py-6 rounded absolute top-[120px] right-[150px] z-20">
         <div>
-          <h1 className="cursor-pointer" onClick={() => handleLinkClick('/aboutus')}>About Us</h1>
-          <h1>Our Team</h1>
-          <h1 className="cursor-pointer" onClick={() => handleLinkClick('/joinus')}>Partner With Us</h1>
+          <h1
+            className="cursor-pointer"
+            onClick={() => handleLinkClick("/aboutus")}
+          >
+            - About Us
+          </h1>
+          <h1> - Our Team</h1>
+          <h1
+            className="cursor-pointer"
+            onClick={() => handleLinkClick("/joinus")}
+          >
+            - Partner With Us
+          </h1>
         </div>
         <div className="mt-[-12px]">
           <button onClick={onRequestClose}>
