@@ -35,18 +35,18 @@ const Hero = () => {
         <Carousel />
       </div>
       <div className="flex items-center p-5 justify-around mt-[80px] md:mt-10">
-        <div className="mt-10 flex justify-center items-center space-x-3 h-10">
+        {/* <div className="mt-10 flex justify-center items-center space-x-3 h-10">
           <FaLocationDot className="text-[#03A9F4] text-[1.2rem] h-20" />
           <h1 className="text-white md:text-[1.4rem]">30+ Cities</h1>
-        </div>
+        </div> */}
         <div className="mt-10 flex justify-center items-center space-x-3 h-10">
           {/* <FaLocationDot className="text-white text-[1.2rem] h-20" /> */}
-          <img src={pgVector} alt="" />
-          <h1 className="text-white md:text-[1.4rem]">30+ Pg&apos;s</h1>
+          {/* <img src={pgVector} alt="" /> */}
+          {/* <h1 className="text-white md:text-[1.4rem]">30+ Pg&apos;s</h1> */}
         </div>
         <div className="mt-10 flex justify-center items-center space-x-3 h-10">
-          <img src={bedVector} alt="" />
-          <h1 className="text-white md:text-[1.4rem]">1000+ beds</h1>
+          {/* <img src={bedVector} alt="" /> */}
+          {/* <h1 className="text-white md:text-[1.4rem]">1000+ beds</h1> */}
         </div>
       </div>
     </main>
