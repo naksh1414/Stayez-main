@@ -13,7 +13,7 @@ const Footer = () => {
     <>
       <main className="bg-[#152038] flex-col hidden md:flex justify-center items-center w-full h-[300px] px-3">
         {/* <img className="object-cover w-full" src={FImg} alt="" /> */}
-        <div className="text-white text-[1.1rem] font-semibold flex justify-around w-[80%] mt-5">
+        <div className="text-white text-[1.1rem] font-semibold flex justify-around w-[80%] lg:mt-5">
           <NavLink to={"/"}>
             <h1>Home</h1>
           </NavLink>
@@ -32,19 +32,19 @@ const Footer = () => {
         </div>
         <div className="mt-5 flex flex-row items-center justify-between w-full">
           <div className="pl-5">
-            <img className="h-[140px] w-[170px]" src={Logo} alt="" />
+            <img className="md:h-[100px] lg:h-[140px] md:w-[120px] lg:w-[170px]" src={Logo} alt="" />
           </div>
           <div className="mt-10">
-            <img src={BtnImg} alt="" />
+            <img className="md:h-18 md:w-[80%] w-full md:ml-5" src={BtnImg} alt="" />
           </div>
           <div className="text-white font-semibold text-[1rem] mt-[-30px] pr-5 items-center justify-center flex flex-col">
             <h1 className="text-[1.1rem]">Subscribe For Updates </h1>
-            <div className="mt-2">
+            <div className="mt-2 flex">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="bg-white/30 placeholder:text-white px-5 py-3 rounded-tl-2xl rounded-bl-2xl"
+                className="bg-white/30 md:w-[150px] lg:w-[220px] placeholder:text-white px-5 py-3 rounded-tl-2xl rounded-bl-2xl"
                 placeholder="Your Mail"
               />
               <button className="text-[#03A9F4] bg-white px-5 py-3 rounded-tr-2xl rounded-br-2xl">

@@ -19,7 +19,7 @@ import { IoFilterSharp } from "react-icons/io5";
 import AllFiltersModal from "../../Components/Modal/AllFiltersModal";
 import axiosInstance from "../../API/axiosConfig";
 
-const API_URL = "https://10.21.81.18:8000";
+const API_URL = "https://5595-125-21-249-98.ngrok-free.app";
 
 const Flats = () => {
   const [modalState, setModalState] = useState(null);

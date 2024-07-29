@@ -7,18 +7,18 @@ import { IoSearchSharp } from "react-icons/io5";
 const Hero = () => {
   return (
     <main className="overflow-hidden">
-      <div className="relative px-5 md:px-[130px] mt-[20px] md:mt-[100px] z-20">
-        <h1 className="text-white text-[1.1rem] md:text-[58px] font-semibold">{`You've got 99`}</h1>
-        <h1 className="text-white text-[1.1rem] md:text-[58px] font-semibold">
+      <div className="relative px-5 md:px-[50px] lg:px-[130px] mt-[20px] md:mt-[50px] lg:mt-[100px] z-20">
+        <h1 className="text-white text-[1.1rem] md:text-[48px] lg:text-[58px] font-semibold">{`You've got 99`}</h1>
+        <h1 className="text-white text-[1.1rem] md:text-[48px] lg:text-[58px] font-semibold">
           Problems, but
         </h1>
-        <h1 className="text-white text-[1.2rem] md:text-[60px] font-semibold">{`brokerage ain't one`}</h1>
+        <h1 className="text-white text-[1.2rem] md:text-[48px] lg:text-[60px] font-semibold">{`brokerage ain't one`}</h1>
         <p className="text-white/50 text-[0.8rem] md:text-[1.2rem]">
           Co-ed. Girls-only. Boys-only. All types of <br /> residences
           available. Co-ed. Girls-only. Boys-<br></br>only. All types of
           residences available. <br /> Co-ed. Girls-only. Boys-only.
         </p>
-        <div className=" absolute left-[190px] md:left-[450px] pt-5 md:pt-2 flex items-center justify-between md:mt-2 rounded-[10px] w-[250px] md:w-[450px] text-white font-semibold ">
+        <div className=" absolute left-[190px] md:left-[370px] lg:left-[450px] pt-5 md:pt-2 flex items-center justify-between md:mt-5 lg:mt-2 rounded-[10px] w-[250px] md:w-[450px] text-white font-semibold ">
           <Button2
             data={"Search"}
             icon={<IoSearchSharp></IoSearchSharp>}
@@ -27,11 +27,11 @@ const Hero = () => {
         </div>
         <input
           type="text"
-          className="p-3 md:p-5 mt-5 md:mt-2 rounded-[10px] w-[250px] md:w-[450px] placeholder:text-white placeholder:font-semibold bg-white/30"
+          className="p-3 md:p-5 mt-5 md:mt-5 lg:mt-2 rounded-[10px] w-[250px] md:w-[450px] placeholder:text-white placeholder:font-semibold bg-white/30"
           placeholder="Find in and Around..."
         ></input>
       </div>
-      <div className="h-full md:flex w-full md:w-[1000px] mt-[-240px] ml-[140px] md:mt-[-485px] md:ml-[450px] -z-20">
+      <div className="h-full md:flex w-full md:w-[600px] lg:w-[1000px] mt-[-240px] ml-[140px] md:mt-[-420px] lg:mt-[-485px] md:ml-[200px] lg:ml-[450px] -z-20">
         <Carousel />
       </div>
       <div className="flex items-center p-5 justify-around mt-[80px] md:mt-10">
