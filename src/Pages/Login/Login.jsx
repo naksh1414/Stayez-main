@@ -4,7 +4,7 @@ import or from "../../assets/or.png";
 import { FcGoogle } from "react-icons/fc";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
+// import Swal from "sweetalert2";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import AuthContext from "../../context/AuthContext";
 import { toast } from "react-toastify";

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Card from "../../Components/Cards/Card";
 import MapImg from "../../assets/Map.png";
-// import data from "../../data/properies.json";
+import data from "../../data/properies.json";
 import Swal from "sweetalert2";
 import { MdArrowDropDown } from "react-icons/md";
 import { FaRupeeSign } from "react-icons/fa";
@@ -24,14 +24,14 @@ const API_URL = "https://10.21.81.18:8000";
 const Flats = () => {
   const [modalState, setModalState] = useState(null);
   const [selectedPriceRange, setSelectedPriceRange] = useState([
-    6000,
+    1000,
     Infinity,
   ]);
   const [selectedDistance, setSelectedDistance] = useState(Infinity);
   const [selectedGender, setSelectedGender] = useState("both");
   const [wishlist, setWishlist] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 5;
+  const itemsPerPage = 7;
   const [selectedPropertyType, setSelectedPropertyType] = useState([]);
   const [selectedAmenity, setSelectedAmenity] = useState([]);
   const [selectedNearCollege, setSelectedNearCollege] = useState([]);
@@ -80,7 +80,7 @@ const Flats = () => {
   };
 
   const handleRemoveFilters = () => {
-    setSelectedPriceRange([6000, Infinity]);
+    setSelectedPriceRange([1000, Infinity]);
     setSelectedDistance(Infinity);
     setSelectedGender("both");
     setSelectedPropertyType([]);
@@ -99,7 +99,7 @@ const Flats = () => {
   // };
 
   const handleRemovePriceFilter = () => {
-    setSelectedPriceRange([6000, Infinity]);
+    setSelectedPriceRange([1000, Infinity]);
   };
 
   const handleRemoveDistanceFilter = () => {
@@ -210,7 +210,7 @@ const Flats = () => {
   const handleRemoveFilter = (filterType) => {
     switch (filterType) {
       case "priceRange":
-        setSelectedPriceRange([6000, Infinity]);
+        setSelectedPriceRange([1000, Infinity]);
         break;
       case "distance":
         setSelectedDistance(Infinity);
@@ -309,7 +309,7 @@ const Flats = () => {
               </button>
             </div>
           )}
-          {selectedPriceRange[0] !== 6000 ||
+          {selectedPriceRange[0] !== 1000 ||
           selectedPriceRange[1] !== Infinity ? (
             <div className="bg-[#2590ce] w-[180px] h-14 justify-center px-3 py-2 rounded-md flex items-center space-x-2">
               <span>{`Price: ${selectedPriceRange[1]}`}</span>
@@ -369,7 +369,7 @@ const Flats = () => {
         onRemoveFilter={handleRemoveFilter}
       />
       <div className="flex flex-row justify-center mt-[10px] md:mt-5">
-        <div className="p-8 pl-20 justify-center items-center flex flex-col">
+        <div className="p-5 pl-20 justify-center items-center flex flex-col">
           <div>
             {currentProperties.map((property, index) => (
               <Card
@@ -388,8 +388,12 @@ const Flats = () => {
             />
           </div>
         </div>
-        <div className="hidden md:flex mt-20 ml-20 p-5">
-          <img className="h-[800px] w-[80%] mt-10" src={MapImg} alt="image" />
+        <div className="hidden md:flex mt-20 ml-20 p-5 relative">
+          <img
+            className="h-[800px] w-[80%] mt-10 sticky t-{10%} left-{10%}"
+            src={MapImg}
+            alt="image"
+          />
         </div>
       </div>
     </main>
